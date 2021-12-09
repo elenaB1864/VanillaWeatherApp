@@ -1,6 +1,8 @@
-.weather {
+.weather-app-wrapper {
   max-width: 600px;
   margin: 30px;
+}
+.weather-app {
   padding: 20px;
   border: 1px solid #dadde1;
   border-radius: 5px;
@@ -25,4 +27,23 @@ li {
   font-weight: 100;
   line-height: 19px;
   color: rgb(135, 135, 135);
+}
+.overview {
+  margin-bottom: 20px;
+}
+.weather-temperature img {
+  margin-right: 10px;
+  height: 64px;
+  width: 64px;
+}
+.weather-temperature strong {
+  color: blue;
+  font-size: 64px;
+  line-height: 1;
+  font-weight: 400;
+}
+.weather-temperature .units {
+  position: relative;
+  font-size: 16px;
+  top: -34px;
 }

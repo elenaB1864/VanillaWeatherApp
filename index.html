@@ -16,19 +16,27 @@
   </head>
   <body>
     <div class="container">
-      <div class="weather">
-        <h1>London</h1>
-        <ul>
-          <li>Friday 05:00</li>
-          <li>Clear</li>
+      <div class="weather-app-wrapper">
+        <div class="weather-app">
+          <div class="overview">
+            <h1>London</h1>
+            <ul>
+              <li>Friday 05:00</li>
+              <li>Clear</li>
+            </ul>
+          </div>
           <div class="row">
             <div class="col-6">
-              <img
-                src="https://ssl.gstatic.com/onebox/weather/64/
+              <div class="clearfix weather-temperature">
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/
 sunny.png"
-                alt="Clear"
-              />
-              12 C | F
+                  alt="Clear"
+                  class="float-left"
+                />
+                <strong>12</strong>
+                <span class="units">°C | <a href="#">°F</a></span>
+              </div>
             </div>
             <div class="col-6">
               <ul>
@@ -38,7 +46,12 @@ sunny.png"
               </ul>
             </div>
           </div>
-        </ul>
+        </div>
+
+        <small>
+          Open-source coded by
+          <a href="https://github.com/elenaB1864">Elena Balanescu</a>.
+        </small>
       </div>
     </div>
   </body>
