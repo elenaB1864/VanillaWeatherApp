@@ -51,10 +51,10 @@ function displayForecast(response) {
                 <div class="weather-forecast-temperature">
                   <span class="weather-forecast-temperature-max">${Math.round(
                     forecastDay.temp.max
-                  )}° C/ </span>
+                  )}°C/ </span>
                   <span class="weather-forecast-temperature-min">${Math.round(
                     forecastDay.temp.min
-                  )}° C </span>
+                  )}°C</span>
                 </div>
               
             </div>`;
@@ -106,7 +106,18 @@ function handleSubmit(event) {
   let cityInputElement = document.querySelector("#city-input");
   search(cityInputElement.value);
 }
+function searchLocation(position) {
+  let apiKey = "c3ca6a249d521dfa006b0911272e88f0";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&appid=${apiKey}`;
+  axios.get(apiUrl).then(displayTemperature);
+}
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchLocation);
+}
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
+let currentLocationButton = document.querySelector("#current-location-button");
+currentLocationButton.addEventListener("click", getCurrentLocation);
 search("London");
